@@ -17,6 +17,7 @@ public class WelcomeController {
         String clsId = "KHOpenAPI.ocx";
         activeXComponent = new ActiveXComponent("KHOpenAPI.ocx");
 
+//        Dispatch.
 
         return "welcome";
     }
