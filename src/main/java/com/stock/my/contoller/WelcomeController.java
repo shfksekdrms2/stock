@@ -9,18 +9,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class WelcomeController {
 
     private static ActiveXComponent activeXComponent;
-//    private static Dispatch dispatch;
+    private static Dispatch dispatch;
 
     @RequestMapping("/welcome")
     public String welcome() {
         // activeX component name or clsId
         String clsId = "KHOpenAPI.ocx";
-        activeXComponent = new ActiveXComponent("C:\\OpenAPI\\KHOpenAPI.ocx");
+        activeXComponent = new ActiveXComponent("KHOpenAPI.ocx");
         // dll 파일 경로 설정
 //        String dllPath = "C:\\OpenAPI";
 //        System.setProperty("jacob.dll.path", dllPath);
 
-        Dispatch dispatch = activeXComponent.getObject();
+        dispatch = activeXComponent.getObject();
 
         // 함수 호출
         Dispatch.call(dispatch, "CommConnect");
